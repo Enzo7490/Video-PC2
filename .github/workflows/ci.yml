@@ -33,3 +33,14 @@ jobs:
         run: mvn clean install
 
       - name: Run tests
+
+
+      - name: Run tests with coverage
+        run: mvn verify
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+
